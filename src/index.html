@@ -29,17 +29,12 @@
 
         <a-scene shadow="type: pcfsoft" physics="debug: true">
 
-            
-              <a-entity position="10 10 10" gltf-model="#drone"
-                        scale="0.02 0.02 0.02"
-                        animation="property: rotation; dur: 10000;
-                                   to: 0 360 0; loop: true">
-              </a-entity>
-            
+              <a-obj-model position="2 1.26 0" obj-model="obj: url(imgs/cat/source/Cat_LP3.obj)"
+              material="src: imgs/cat/textures/Cat_Basecolor.png" scale="0.3 0.3 0.3" rotation="0 180 0" 
+              animation="property: rotation; to: 0 360 0; loop: true; dur: 10000"
+              >
 
-              <a-entity position="1 1 0" obj-model="obj: url(imgs/cat/source/Cat_LP3.obj)"
-              material="color: white" scale="0.3 0.3 0.3" rotation="0 180 0">
-                 </a-entity>
+                 </a-obj-model>
 
             <!-- Initiate Asset Management System. Used to preload entities -->
             <a-assets>
