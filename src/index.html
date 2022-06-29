@@ -15,7 +15,7 @@
     <!-- Use githack to pull the latest js, and pull in obsolete Geometry.js from three -->
     <script src="https://cdn.jsdelivr.net/gh/mrdoob/three.js@r134/examples/js/deprecated/Geometry.js"></script>
     <script src="https://rawcdn.githack.com/n5ro/aframe-physics-system/59100ac83033cf337d26925de1f92854c2988b75/dist/aframe-physics-system.min.js"></script>
-
+    <script src="https://unpkg.com/aframe-event-set-component@3.0.3/dist/aframe-event-set-component.min.js"></script>
     
     <script src="https://unpkg.com/super-hands@^3.0.3/dist/super-hands.min.js"></script>
     <script src="js/index.js"></script>
@@ -32,9 +32,20 @@
               <a-obj-model position="2 1.26 0" obj-model="obj: url(imgs/cat/source/Cat_LP3.obj)"
               material="src: imgs/cat/textures/Cat_Basecolor.png" scale="0.3 0.3 0.3" rotation="0 180 0" 
               animation="property: rotation; to: 0 360 0; loop: true; dur: 10000"
+              event-set__enter="_event: mouseenter; _target: #welcomeText; visible: true"
+              event-set__leave="_event: mouseleave; _target: #welcomeText; visible: false"
               >
-
+                <a-text id="welcomeText" value="Welcome to Zone" 
+                align="center" color="#FFF" visible="false" 
+                position="2 2 0"
+                geometry="primitive: plane; width: 1.75" material="color: #333">
+                </a-text>
                  </a-obj-model>
+
+                <a-camera>
+                    <a-cursor></a-cursor>
+                </a-camera>
+
 
             <!-- Initiate Asset Management System. Used to preload entities -->
             <a-assets>
